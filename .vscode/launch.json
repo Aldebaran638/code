@@ -1,0 +1,43 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run current C++ file (in.in -> out.out)",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "\"${workspaceFolder}/.vscode/build/active-cpp\" < \"${workspaceFolder}/in.in\" > \"${workspaceFolder}/out.out\"",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Build active C++ file"
+        },
+        {
+            "name": "Debug current C++ file (GDB, terminal input/output)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/bin/bash",
+            "args": [
+                "${workspaceFolder}/.vscode/debug-runner.sh",
+                "${workspaceFolder}/.vscode/build/active-cpp",
+                "${workspaceFolder}/in.in",
+                "${workspaceFolder}/out.out"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "preLaunchTask": "Build active C++ file",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+  "C_Cpp.default.compilerPath": "/usr/bin/g++",
+  "C_Cpp.default.cppStandard": "gnu++20",
+  "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+  "C_Cpp.debugShortcut": true,
+  "code-runner.runInTerminal": true,
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.ignoreSelection": true,
+  "code-runner.preserveFocus": false,
+  "code-runner.showRunIconInEditorTitleMenu": true,
+  "code-runner.executorMap": {
+    "cpp": "mkdir -p \"$workspaceRoot/.vscode/build\" && /usr/bin/g++ -std=gnu++20 -Wall -Wextra -Wshadow -g \"$fullFileName\" -o \"$workspaceRoot/.vscode/build/active-cpp\" && \"$workspaceRoot/.vscode/build/active-cpp\" < \"$workspaceRoot/in.in\" > \"$workspaceRoot/out.out\""
+  },
+  "editor.tabCompletion": "on",
+  "files.associations": {
+    "iostream": "cpp",
+    "bits/stdc++.h": "cpp"
+  }
+}
