@@ -1,55 +1,60 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "Prepare C++ build directory",
-      "type": "shell",
-      "command": "mkdir",
-      "args": ["-p", "${workspaceFolder}/.vscode/build"],
-      "problemMatcher": []
-    },
-    {
-      "label": "Build active C++ file",
-      "type": "shell",
-      "command": "/usr/bin/g++",
-      "args": [
-        "-std=gnu++20",
-        "-Wall",
-        "-Wextra",
-        "-Wshadow",
-        "-g",
-        "${file}",
-        "-o",
-        "${workspaceFolder}/.vscode/build/active-cpp"
-      ],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      },
-      "dependsOn": "Prepare C++ build directory",
-      "dependsOrder": "sequence",
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Prepare C++ build directory",
+            "type": "shell",
+            "command": "mkdir",
+            "args": [
+                "-p",
+                "${workspaceFolder}/.vscode/build"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Build active C++ file",
+            "type": "shell",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-std=gnu++20",
+                "-Wall",
+                "-Wextra",
+                "-Wshadow",
+                "-g",
+                "${file}",
+                "-o",
+                "${workspaceFolder}/.vscode/build/active-cpp"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "Prepare C++ build directory",
+            "dependsOrder": "sequence",
       "group": {
         "kind": "build",
         "isDefault": true
-      },
-      "problemMatcher": ["$gcc"],
-      "detail": "Builds the currently active C++ file with GNU C++20."
-    },
-    {
-      "label": "Run active C++ file",
-      "type": "shell",
-      "command": "\"${workspaceFolder}/.vscode/build/active-cpp\" < \"${workspaceFolder}/in.in\" > \"${workspaceFolder}/out.out\"",
-      "options": {
-        "cwd": "${workspaceFolder}"
-      },
-      "dependsOn": "Build active C++ file",
-      "dependsOrder": "sequence",
-      "presentation": {
-        "reveal": "always",
-        "panel": "shared",
-        "focus": true,
-        "clear": true
-      },
-      "problemMatcher": []
-    }
-  ]
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "detail": "Builds the currently active C++ file with GNU C++20."
+        },
+        {
+            "label": "Run active C++ file",
+            "type": "shell",
+            "command": "\"${workspaceFolder}/.vscode/build/active-cpp\" < \"${workspaceFolder}/in.in\" > \"${workspaceFolder}/out.out\"",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "Build active C++ file",
+            "dependsOrder": "sequence",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "focus": true,
+                "clear": true
+            },
+            "problemMatcher": []
+        }
+    ]
 }
