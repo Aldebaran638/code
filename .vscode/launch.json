@@ -2,15 +2,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run current C++ file (in.in -> out.out)",
-            "type": "node-terminal",
-            "request": "launch",
-            "command": "\"${workspaceFolder}/.vscode/build/active-cpp\" < \"${workspaceFolder}/in.in\" > \"${workspaceFolder}/out.out\"",
-            "cwd": "${workspaceFolder}",
-            "preLaunchTask": "Build active C++ file"
-        },
-        {
-            "name": "Debug current C++ file (GDB, terminal input/output)",
+            "name": "Debug current C++ file (in.in -> out.out)",
             "type": "cppdbg",
             "request": "launch",
             "program": "/bin/bash",
@@ -38,6 +30,14 @@
                     "ignoreFailures": true
                 }
             ]
+        },
+        {
+            "name": "Run current C++ file (in.in -> out.out)",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "\"${workspaceFolder}/.vscode/build/active-cpp\" < \"${workspaceFolder}/in.in\" > \"${workspaceFolder}/out.out\"",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "Build active C++ file"
         }
     ]
 }
