@@ -2,7 +2,7 @@
   "C_Cpp.default.compilerPath": "/usr/bin/g++",
   "C_Cpp.default.cppStandard": "gnu++20",
   "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
-  "C_Cpp.debugShortcut": false,
+  "C_Cpp.debugShortcut": true,
   "code-runner.runInTerminal": true,
   "code-runner.saveFileBeforeRun": true,
   "code-runner.ignoreSelection": true,

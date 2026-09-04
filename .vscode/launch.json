@@ -5,19 +5,23 @@
             "name": "Debug current C++ file (in.in -> out.out)",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/bin/bash",
-            "args": [
-                "${workspaceFolder}/.vscode/debug-runner.sh",
-                "${workspaceFolder}/.vscode/build/active-cpp",
-                "${workspaceFolder}/in.in",
-                "${workspaceFolder}/out.out"
-            ],
+            "program": "${workspaceFolder}/.vscode/build/active-cpp",
+            "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
             "preLaunchTask": "Build active C++ file",
+            "launchCompleteCommand": "None",
+            "customLaunchSetupCommands": [
+                {
+                    "text": "-interpreter-exec console \"run < '${workspaceFolder}/in.in' > '${workspaceFolder}/out.out'\"",
+                    "description": "Run the C++ program with workspace input/output files",
+                    "ignoreFailures": false
+                }
+            ],
             "setupCommands": [
                 {
                     "description": "为 gdb 启用整齐打印",
